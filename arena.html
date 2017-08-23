@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               //initial setting of the background picture to fade 0
+               //hiding the initial characterscreen
+                $('.mappic').fadeTo(0, 0);
+                $('.playerpic').fadeTo(0, 0);
+                $('.playerpic2').fadeTo(0, 0);
+                $("#characterscreen").hide();
+
+                $("#beach").hover(function() {
+                    $("#beachpic").fadeTo(0, 1);
+                }, function(){
+                    $('.mappic').fadeTo(0, 0);
+                });
+                $("#planet").hover(function() {
+                    $("#earthpic").fadeTo(0, 1);
+                }, function(){
+                    $('.mappic').fadeTo(0, 0);
+                });
+                $("#dojo").hover(function() {
+                    $("#dojopic").fadeTo(0, 1);
+                }, function(){
+                    $('.mappic').fadeTo(0, 0);
+                });
+                $("#forest").hover(function() {
+                    $("#forestpic").fadeTo(0, 1);
+                }, function(){
+                    $('.mappic').fadeTo(0, 0);
+                });
+                $("#matrix").hover(function() {
+                    $("#matrixpic").fadeTo(0, 1);
+                }, function(){
+                    $('.mappic').fadeTo(0, 0);
+                });
+                $("#snow").hover(function() {
+                    $("#snowpic").fadeTo(0, 1);
+                }, function(){
+                    $('.mappic').fadeTo(0, 0);
+                });
+                
+        //These are the button click jQuery functions
+          
+                 $("#beach").click(function(){
+                    $("#beach").hover(function() {
+                        $("#beachpic").fadeTo(0, 1);
+                    });
+                    $("#arenascreen").hide();
+                    $("#characterscreen").show();
+
+                });
+                $("#planet").click(function(){
+                    $("#planet").hover(function() {
+                        $("#earthpic").fadeTo(0, 1);
+                    });
+                    $("#arenascreen").hide();
+                    $("#characterscreen").show();
+                });
+                $("#dojo").click(function(){
+                    $("#dojo").hover(function() {
+                        $("#dojopic").fadeTo(0, 1);
+                    });
+                    $("#arenascreen").hide();
+                    $("#characterscreen").show();
+                });
+                $("#forest").click(function(){
+                    $("#forest").hover(function() {
+                        $("#forestpic").fadeTo(0, 1);
+                    });
+                    $("#arenascreen").hide();
+                    $("#characterscreen").show();
+                });
+                $("#matrix").click(function(){
+                    $("#matrix").hover(function() {
+                        $("#matrixpic").fadeTo(0, 1);
+                    });
+                    $("#arenascreen").hide();
+                    $("#characterscreen").show();
+                });
+                $("#snow").click(function(){
+                    $("#snow").hover(function() {
+                        $("#snowpic").fadeTo(0, 1);
+                    });
+                    $("#arenascreen").hide();
+                    $("#characterscreen").show();
+                });
+
+                //jQuery functions to get selections from dropdown - set character pics
+
+            // console.log($("#player1").val()); 
+ 
+
+            });
+            $(document).on("change", "#player1", function(){
+                $('.playerpic').fadeTo(0, 0);
+                var turtle = $(this).val();
+
+                
+                $("#" + turtle).fadeTo(0, 1);
+                });
+            $(document).on("change", "#player2", function(){
+                $('.playerpic2').fadeTo(0, 0);
+                var turtle = $(this).val();
+
+                
+                $("#" + turtle + "2").fadeTo(0, 1);
+                });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="mapbackground">
+                <img class="mappic" id="beachpic" src="dojo_arena_photos/beach.jpg">
+                <img class="mappic" id="earthpic" src="dojo_arena_photos/earth.jpg">
+                <img class="mappic" id="dojopic" src="dojo_arena_photos/dojo.jpg">
+                <img class="mappic" id="forestpic" src="dojo_arena_photos/forest.jpg">
+                <img class="mappic" id="matrixpic" src="dojo_arena_photos/matrix.jpg">
+                <img class="mappic" id="snowpic" src="dojo_arena_photos/snow.jpg">
+                <div id="playerbox1">
+                        <img class="playerpic" id="donny" src="dojo_arena_photos/donny.png">
+                        <img class="playerpic" id="raphael" src="dojo_arena_photos/raphael.png">
+                        <img class="playerpic" id="mikey" src="dojo_arena_photos/mikey.png">
+                        <img class="playerpic" id="leo" src="dojo_arena_photos/leo.png">
+                </div>
+                <div id="playerbox2">
+                        <img class="playerpic2" id="donny2" src="dojo_arena_photos/donny.png">
+                        <img class="playerpic2" id="raphael2" src="dojo_arena_photos/raphael.png">
+                        <img class="playerpic2" id="mikey2" src="dojo_arena_photos/mikey.png">
+                        <img class="playerpic2" id="leo2" src="dojo_arena_photos/leo.png">
+                </div>
+                </div>
+                <div class="menuscreen" id="arenascreen">
+                    <p id="arenatitle">
+                        Select Arena
+                    </p>
+                    <div id="arenabuttonborder">
+                        <button class="arenabutton" id="beach">
+                            beach
+                        </button>
+                        <button class="arenabutton" id="planet">
+                            planet
+                        </button>
+                        <button class="arenabutton" id="dojo">
+                            dojo
+                        </button>
+                        <button class="arenabutton" id="forest">
+                            forest
+                        </button>
+                        <button class="arenabutton" id="matrix">
+                            matrix
+                        </button>
+                        <button class="arenabutton" id="snow">
+                            snow
+                        </button>
+                    </div>
+                </div>
+                <div class="menuscreen" id="characterscreen">
+                        <p id="arenatitle">
+                            Select Players
+                        </p>
+                        <div id="arenabuttonborder">
+                            <select class="playerbutton" id="player1">
+                                <option value="default">Select A Ninja</option>
+                                <option value="donny">Donatelo</option>
+                                <option value="raphael">Raphael</option>
+                                <option value="leo">Leonardo</option>
+                                <option value="mikey">Michaelangelo</option>
+                            </select>
+                            <select class="playerbutton" id="player2">
+                                <option value="default">Select A Ninja</option>                                    
+                                <option value="donny">Donatelo</option>
+                                <option value="raphael">Raphael</option>
+                                <option value="leo">Leonardo</option>
+                                <option value="mikey">Michaelangelo</option>
+                            </select>
+                        </div>
+                    </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
+    
+</html>
