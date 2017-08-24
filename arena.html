@@ -15,89 +15,29 @@
                 $('.playerpic2').fadeTo(0, 0);
                 $("#characterscreen").hide();
 
-                $("#beach").hover(function() {
-                    $("#beachpic").fadeTo(0, 1);
-                }, function(){
-                    $('.mappic').fadeTo(0, 0);
-                });
-                $("#planet").hover(function() {
-                    $("#earthpic").fadeTo(0, 1);
-                }, function(){
-                    $('.mappic').fadeTo(0, 0);
-                });
-                $("#dojo").hover(function() {
-                    $("#dojopic").fadeTo(0, 1);
-                }, function(){
-                    $('.mappic').fadeTo(0, 0);
-                });
-                $("#forest").hover(function() {
-                    $("#forestpic").fadeTo(0, 1);
-                }, function(){
-                    $('.mappic').fadeTo(0, 0);
-                });
-                $("#matrix").hover(function() {
-                    $("#matrixpic").fadeTo(0, 1);
-                }, function(){
-                    $('.mappic').fadeTo(0, 0);
-                });
-                $("#snow").hover(function() {
-                    $("#snowpic").fadeTo(0, 1);
-                }, function(){
-                    $('.mappic').fadeTo(0, 0);
+                $(".arenabutton").hover(function(){
+                    var id = $(this).attr("id");
+                    $("#" + id + "pic").fadeTo(0,1);
+                },function(){
+                    $(".mappic").fadeTo(0,0);
+                
+            
                 });
                 
         //These are the button click jQuery functions
           
-                 $("#beach").click(function(){
-                    $("#beach").hover(function() {
-                        $("#beachpic").fadeTo(0, 1);
-                    });
+                 $(".arenabutton").click(function(){
+                    $(".arenabutton").hover(function(){
+                    var id = $(this).attr("id");
+                    $("#" + id + "pic").fadeTo(0,1);
+                 });
                     $("#arenascreen").hide();
                     $("#characterscreen").show();
 
                 });
-                $("#planet").click(function(){
-                    $("#planet").hover(function() {
-                        $("#earthpic").fadeTo(0, 1);
-                    });
-                    $("#arenascreen").hide();
-                    $("#characterscreen").show();
-                });
-                $("#dojo").click(function(){
-                    $("#dojo").hover(function() {
-                        $("#dojopic").fadeTo(0, 1);
-                    });
-                    $("#arenascreen").hide();
-                    $("#characterscreen").show();
-                });
-                $("#forest").click(function(){
-                    $("#forest").hover(function() {
-                        $("#forestpic").fadeTo(0, 1);
-                    });
-                    $("#arenascreen").hide();
-                    $("#characterscreen").show();
-                });
-                $("#matrix").click(function(){
-                    $("#matrix").hover(function() {
-                        $("#matrixpic").fadeTo(0, 1);
-                    });
-                    $("#arenascreen").hide();
-                    $("#characterscreen").show();
-                });
-                $("#snow").click(function(){
-                    $("#snow").hover(function() {
-                        $("#snowpic").fadeTo(0, 1);
-                    });
-                    $("#arenascreen").hide();
-                    $("#characterscreen").show();
-                });
-
-                //jQuery functions to get selections from dropdown - set character pics
-
-            // console.log($("#player1").val()); 
- 
-
+                
             });
+
             $(document).on("change", "#player1", function(){
                 $('.playerpic').fadeTo(0, 0);
                 var turtle = $(this).val();
@@ -110,15 +50,16 @@
                 var turtle = $(this).val();
 
                 
-                $("#" + turtle + "2").fadeTo(0, 1);
+                $("#" + turtle).fadeTo(0, 1);
                 });
+
         </script>
     </head>
     <body>
         <div id="wrapper">
             <div id="mapbackground">
                 <img class="mappic" id="beachpic" src="dojo_arena_photos/beach.jpg">
-                <img class="mappic" id="earthpic" src="dojo_arena_photos/earth.jpg">
+                <img class="mappic" id="planetpic" src="dojo_arena_photos/earth.jpg">
                 <img class="mappic" id="dojopic" src="dojo_arena_photos/dojo.jpg">
                 <img class="mappic" id="forestpic" src="dojo_arena_photos/forest.jpg">
                 <img class="mappic" id="matrixpic" src="dojo_arena_photos/matrix.jpg">
@@ -175,10 +116,10 @@
                             </select>
                             <select class="playerbutton" id="player2">
                                 <option value="default">Select A Ninja</option>                                    
-                                <option value="donny">Donatelo</option>
-                                <option value="raphael">Raphael</option>
-                                <option value="leo">Leonardo</option>
-                                <option value="mikey">Michaelangelo</option>
+                                <option value="donny2">Donatelo</option>
+                                <option value="raphael2">Raphael</option>
+                                <option value="leo2">Leonardo</option>
+                                <option value="mikey2">Michaelangelo</option>
                             </select>
                         </div>
                     </div>
